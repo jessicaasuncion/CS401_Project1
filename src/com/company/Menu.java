@@ -48,7 +48,7 @@ public class Menu {
 
             // Delete contact by last name
             case 'c':
-                System.out.println("Enter in LastName of contact to remove:");
+                AddressBook.remove();
                 break;
 
             // Find contact from file
