@@ -69,9 +69,42 @@ public class AddressBook {
     /**
      *
      */
-    public void remove()
-    {
+    public static void remove() throws IOException {
+        Scanner inputLast = new Scanner(System.in);
+        System.out.println("Enter in all or the beginning of the last name of the contact you wish to find: ");
+        String startOf_lastName = inputLast.nextLine();
+        find(startOf_lastName);
 
+        Scanner inputFirst = new Scanner(System.in);
+        System.out.println("Enter in First Name you wish to remove:");
+        String first = inputFirst.nextLine();
+
+        for(int i = 0; i < addressEntryList.size(); i++)
+        {
+            if(addressEntryList.get(i).getFirstName().startsWith(first))
+            {
+                System.out.println(addressEntryList.get(i));
+
+                Scanner inputOption = new Scanner(System.in);
+                System.out.println("Hit 'y' to remove the following entry or 'n' to return to main menu: ");
+                char option;
+                option = inputOption.next().charAt(0);
+
+                switch (option)
+                {
+                    case 'y':
+                        System.out.println("You have successfully removed the " + addressEntryList.get(i).getFirstName() + " " +
+                                addressEntryList.get(i).getLastName() + " contact.");
+                        addressEntryList.remove(i);
+                        break;
+                    case 'n':
+                        Menu.print_Menu();
+                        break;
+                    default:
+                        System.out.println("Incorrect option. Please enter a valid option. ");
+                }
+            }
+        }
     }
 
     /**
@@ -122,16 +155,13 @@ public class AddressBook {
      */
     public static void find(String startOf_lastName) throws IOException {
         int count = 0;
+
         for(int i = 0; i < addressEntryList.size(); i++)
         {
-            if(addressEntryList.get(i).getLastName().equals(startOf_lastName))
+            if(addressEntryList.get(i).getLastName().startsWith(startOf_lastName))
             {
-                System.out.println(addressEntryList.toString());
+                System.out.println(addressEntryList.get(i));
                 count++;
-            }
-            else
-            {
-                System.out.println("No entries found containing that word.");
             }
         }
         System.out.println("The following " + count + " entries were found in the address book with the word starting with " +
