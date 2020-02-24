@@ -2,6 +2,7 @@ package com.company;
 import java.util.Collections;
 /**
  * The AddressEntry class represents a single Address entry in the AddressBook
+ * includes variables, constructor, set and get methods
  * @author JessicaAsuncion
  */
 public class AddressEntry implements Comparable{

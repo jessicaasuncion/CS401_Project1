@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class AddressBookApplication {
     /**
-     * Main program
+     * Main program just for using the menu
      * @param args command line
      */
     public static void main(String[] args) throws IOException {

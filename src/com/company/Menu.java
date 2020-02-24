@@ -11,10 +11,10 @@ public class Menu {
      * The menu prompts the user for which they would like to do: load, addition, removal, find, listing, or quit
      * by entering a letter
      */
-
     public static void print_Menu() throws IOException {
         AddressEntry a = new AddressEntry();
 
+        // show user the menu and ask what they would like to do
         char select;
         Scanner sc = new Scanner(System.in);
         System.out.println("*****************************\n");
